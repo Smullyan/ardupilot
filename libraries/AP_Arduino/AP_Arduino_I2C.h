@@ -11,6 +11,9 @@ public:
     // constructor
     AP_Arduino();
 
+    //settable parameters
+    static const struct AP_Param::GroupInfo var_info[];
+
 protected:
     AP_Int16 _my_new_lib_parameter;
 };
