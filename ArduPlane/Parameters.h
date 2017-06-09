@@ -196,7 +196,7 @@ public:
         k_param_battery_monitoring, // unused
         k_param_volt_div_ratio,     // unused
         k_param_curr_amp_per_volt,  // unused
-        k_param_input_voltage, // deprecated, can be deleted
+        k_param_arduino, // the dummy new parameter value
         k_param_pack_capacity,      // unused
         k_param_sonar_enabled_old,  // unused
         k_param_ahrs,  // AHRS group
