@@ -8,5 +8,7 @@ const AP_Param::GroupInfo AP_Arduino::var_info[] = {
     // @User: Advanced
     AP_GROUPINFO("MY_NEW_P", 0, AP_Arduino, _my_new_lib_parameter, MY_NEW_PARAM_DEFAULT),
 
+    // the 0 is the initial value that will be shown on the mission planner
+
     AP_GROUPEND
 };
