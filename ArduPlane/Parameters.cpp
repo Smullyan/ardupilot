@@ -1179,7 +1179,7 @@ const AP_Param::Info Plane::var_info[] = {
     GOBJECT(landing, "LAND_", AP_Landing),
 
     // @Group: ARDUINO
-    // @Path: ../libraries/AP_Arduino/AP_Aruino_I2C.cpp
+    // @Path: ../libraries/AP_Arduino/AP_Arduino_I2C.cpp
     GOBJECT(arduino, "ARDUINO", AP_Arduino),
 
 

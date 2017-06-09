@@ -390,6 +390,9 @@ private:
     // Battery Sensors
     AP_BattMonitor battery;
 
+    // Dummy variable
+    int16_t arduino;
+
 #if FRSKY_TELEM_ENABLED == ENABLED
     // FrSky telemetry support
     AP_Frsky_Telem frsky_telemetry {ahrs, battery, rangefinder};
