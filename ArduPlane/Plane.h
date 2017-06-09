@@ -79,6 +79,7 @@
 #include <AP_Soaring/AP_Soaring.h>
 #include <AP_Notify/AP_Notify.h>      // Notify library
 #include <AP_BattMonitor/AP_BattMonitor.h> // Battery monitor library
+#include <AP_Arduino/AP_Arduino_I2C.h>  // Dummy library
 
 #include <AP_Arming/AP_Arming.h>
 #include <AP_BoardConfig/AP_BoardConfig.h>
