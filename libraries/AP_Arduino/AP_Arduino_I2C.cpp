@@ -1,6 +1,6 @@
 #include "AP_Arduino_I2C.h"
 
-const AP_Param::GroupInfo AP_Arduino_I2C::var_info[] = {
+const AP_Param::GroupInfo AP_Arduino::var_info[] = {
     // @Param: MY_NEW_P
     // @DisplayName: My New Library Parameter
     // @Description: The new library parameter description goes here
