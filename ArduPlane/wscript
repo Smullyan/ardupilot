@@ -30,6 +30,7 @@ def build(bld):
             'AC_PID',
             'AC_Fence',
             'AC_Avoidance'
+            'AP_Fuel'
         ],
     )
 
