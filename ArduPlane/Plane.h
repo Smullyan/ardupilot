@@ -76,6 +76,7 @@
 
 #include <AP_Notify/AP_Notify.h>      // Notify library
 #include <AP_BattMonitor/AP_BattMonitor.h> // Battery monitor library
+#include <AP_Fuel/AP_Fuel.h>  // Fuel monitor library
 
 #include <AP_Arming/AP_Arming.h>
 #include <AP_BoardConfig/AP_BoardConfig.h>
