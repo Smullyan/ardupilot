@@ -1,4 +1,11 @@
+#include "AP_Fuel.h"
+
+
 #include <AP_HAL/AP_HAL.h>
+#include <AP_HAL/I2CDevice.h>
+
+
+extern const AP_HAL::HAL &hal;
 
 #define ARDUINO_I2C_ADDR 42  //0x2A
 
@@ -15,13 +22,13 @@ bool AP_Fuel::init()
 
     // take i2c bus semaphore
     if (!_dev || !_dev->get_semaphore()->take(200)) {
-	return false;
+      return false;
     }
-
     
+    return false;
 }
 
-void read() 
+void AP_Fuel::read(void) 
 {
     //NOTE created simple i2c transfer which will store data in
     //     variable resistor.
@@ -29,7 +36,6 @@ void read()
     
     uint8_t data[2];
 
-    _measurement_started_ms = 0;
 
     if (!_dev->transfer(nullptr, 0, data, sizeof(data))) {
 	return;
