@@ -416,6 +416,9 @@ private:
     // Battery Sensors
     AP_BattMonitor battery;
 
+    // Fuel sensor
+    AP_Fuel fuel;
+    
 #if FRSKY_TELEM_ENABLED == ENABLED
     // FrSky telemetry support
     AP_Frsky_Telem frsky_telemetry {ahrs, battery, rangefinder};
@@ -976,6 +979,7 @@ private:
     void read_airspeed(void);
     void zero_airspeed(bool in_startup);
     void read_battery(void);
+    void read_fuel(void);
     void read_receiver_rssi(void);
     void rpm_update(void);
     void button_update(void);

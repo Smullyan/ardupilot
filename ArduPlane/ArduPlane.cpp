@@ -101,6 +101,9 @@ void Plane::setup()
 
     init_ardupilot();
 
+    // init the fuel sensor
+    fuel.init();
+    
     // initialise the main loop scheduler
     scheduler.init(&scheduler_tasks[0], ARRAY_SIZE(scheduler_tasks));
 }

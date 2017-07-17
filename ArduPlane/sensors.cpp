@@ -137,6 +137,14 @@ void Plane::read_battery(void)
     }
 }
 
+// read fuel - reads the data from the arduino
+// TODO refine the arduino
+void Plane::read_fuel(void)
+{
+    fuel.read();
+}
+
+
 // read the receiver RSSI as an 8 bit number for MAVLink
 // RC_CHANNELS_SCALED message
 void Plane::read_receiver_rssi(void)
