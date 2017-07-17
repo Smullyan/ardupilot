@@ -21,8 +21,8 @@ public:
 
     
     // return the current data
-     get_data(void) const {
-	return _data;
+    int16_t get_data(void) const {
+	return _current_data;
     }
 
 private:

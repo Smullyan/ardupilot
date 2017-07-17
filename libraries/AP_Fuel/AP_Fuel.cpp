@@ -21,7 +21,7 @@ bool AP_Fuel::init()
     
 }
 
-void get_data()
+void read() 
 {
     //NOTE created simple i2c transfer which will store data in
     //     variable resistor.
@@ -37,5 +37,6 @@ void get_data()
 
     int16_t resistor;
     resistor = (data[0] << 8) + data[1];
-    
+    _current_data = resistor;
 }
+
