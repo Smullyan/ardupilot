@@ -289,8 +289,8 @@ void Plane::send_extended_status1(mavlink_channel_t chan)
     int8_t battery_remaining = -1;
 
     if (battery.has_current() && battery.healthy()) {
-        battery_remaining = fuel.get_data;
-        battery_current = battery.current_amps() * 100;
+        battery_remaining = battery.capacity_remaining_pct();
+        battery_current = fuel.get_data();
     }
 
 #if AP_TERRAIN_AVAILABLE
