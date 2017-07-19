@@ -1,8 +1,12 @@
 #include "AP_Fuel.h"
 
 
+#include <AP_Common/AP_Common.h>
 #include <AP_HAL/AP_HAL.h>
 #include <AP_HAL/I2CDevice.h>
+#include <AP_Math/AP_Math.h>
+#include <GCS_MAVLink/GCS.h>
+#include <utility>
 
 
 extern const AP_HAL::HAL &hal;
@@ -11,6 +15,8 @@ extern const AP_HAL::HAL &hal;
 
 #define ARDUINO_I2C_BUS 1
 
+// Constructor
+AP_Fuel::AP_Fuel(){}
 
 // probe and initialise the sensor
 bool AP_Fuel::init()
