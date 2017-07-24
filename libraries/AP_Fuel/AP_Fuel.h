@@ -24,17 +24,23 @@ public:
     // TODO might want to consider adding additional parameters
     // where we extend the arduino send routine by filling the twi
     // data register and sending the data with multiple variables.
-    void read(void);
-    
+    void read_resistor(void);
+
+    void read_id(void);
     
     // return the current data
-    int16_t get_data(void) const {
-	return _current_data;
+    int8_t get_resistor(void) const {
+	return _resistor_data;
+    }
+
+    // return the id data
+    int8_t get_id(void) const {
+	return _id_data;
     }
     
     
-    
 private:
-    int16_t          _current_data;
+    int8_t          _resistor_data;
+    int8_t          _id_data;
     AP_HAL::OwnPtr<AP_HAL::I2CDevice> _dev;
 };
