@@ -141,7 +141,7 @@ void Plane::read_battery(void)
 // TODO refine the arduino
 void Plane::read_fuel(void)
 {
-    fuel.read();
+    fuel.read_resistor();
 }
 
 
