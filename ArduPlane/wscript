@@ -29,7 +29,7 @@ def build(bld):
             'AP_Motors',
             'AC_PID',
             'AC_Fence',
-            'AC_Avoidance'
+            'AC_Avoidance',
             'AP_Fuel'
         ],
     )
