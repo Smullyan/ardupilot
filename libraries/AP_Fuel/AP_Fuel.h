@@ -1,5 +1,7 @@
 #pragma once
 
+// NOTE I don't think we need all these libraries.
+
 #include <AP_Common/AP_Common.h>
 #include <AP_HAL/AP_HAL.h>
 #include <AP_Param/AP_Param.h>
@@ -14,8 +16,13 @@ public:
     /// Constructor
     AP_Fuel();
 
-    // TODO: once you've finished creating the basic
+    // DONEish: once you've finished creating the basic
     // frontend, create the backend driver
+    
+    // TODO technically, this IS the backend (in addition to the calls below
+    // being the frontend). The backend will be necessary to write if we have
+    // multiple fuel tanks or multiple methods to communicate to the fuel tanks.
+    // Here, we simply communicate using Arduino's I2C method.
 
     // Initialise
     bool init(void);

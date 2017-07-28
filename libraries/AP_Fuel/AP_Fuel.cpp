@@ -1,5 +1,6 @@
 #include "AP_Fuel.h"
 
+// NOTE I don't think we need all these libraries
 
 #include <AP_Common/AP_Common.h>
 #include <AP_HAL/AP_HAL.h>
@@ -11,7 +12,7 @@
 
 extern const AP_HAL::HAL &hal;
 
-#define ARDUINO_I2C_ADDR 42  //0x2A
+#define ARDUINO_I2C_ADDR 42  //0x2A, this is the set slave address on the Arduino
 
 #define ARDUINO_I2C_BUS 1
 
@@ -22,31 +23,29 @@ AP_Fuel::AP_Fuel(){}
 bool AP_Fuel::init()
 {
     //NOTE we use the exact same template from AP_Airspeed_I2C
-    //TODO test the init and read code. Forget everything else.
+    //DONE test the init and read code. Forget everything else.
 
     _dev = hal.i2c_mgr->get_device(ARDUINO_I2C_BUS, ARDUINO_I2C_ADDR);
 
-    // take i2c bus semaphore
-    if (!_dev || !_dev->get_semaphore()->take(200)) {
-      return false;
-    }
-
-    //_dev->register_periodic_callback(50000,
-    //				     FUNCTOR_BIND_MEMBER()
-    
     return false;
 }
 
 void AP_Fuel::read_resistor(void) 
 {
-    //NOTE created simple i2c transfer which will store data in
-    //     variable resistor.
-    //DONE find a way to test the read() function.
-    //TODO find a way to read multiple registers from the same device
-    
+    // NOTE created simple i2c transfer which will store data in
+    //      variable resistor.
+    // DONE find a way to test the read() function.
+    // DONE find a way to read multiple registers from the same device
+
+    // TODO I still think that there's something wrong with the threading.
+    //      There's no use of semaphores etc. I suggest reading the section
+    //      on threading in the ardupilot dev website. We'll need to be familiar
+    //      with the nsh console to debug this problem.
+
+
     uint8_t data[1];
 
-    uint8_t cmd2 = 2;  // 2 is enumerated to send A0 in range 0 to 100
+    uint8_t cmd2 = 2;  // 2 is a command value to send A0 value in range 0 to 100
     
     if (!_dev->transfer(&cmd2, 1, nullptr, 0)) {
 	return;
@@ -61,8 +60,8 @@ void AP_Fuel::read_resistor(void)
     resistor = (data[0]);
     _resistor_data = resistor;
 
-    
-    hal.console->println("Testing yo!");
+    // This is for the example sketch
+    // hal.console->println("Testing yo!");
 }
 
 
@@ -71,7 +70,9 @@ void AP_Fuel::read_id(void)
     //NOTE created simple i2c transfer which will store data in
     //     variable resistor.
     //DONE find a way to test the read() function.
-    //TODO find a way to read multiple registers from the same device
+    //DONE find a way to read multiple registers from the same device
+
+    //_measurement_started_ms = 0;
     
     uint8_t data[1];
 
@@ -90,6 +91,7 @@ void AP_Fuel::read_id(void)
     id = (data[0]);
     _id_data = id;
 
-    
-    hal.console->println("Testing 2 yo!");
+   
+    // This is for the example sketch
+    // hal.console->println("Testing 2 yo!");
 }
