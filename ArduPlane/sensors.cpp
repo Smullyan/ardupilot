@@ -138,7 +138,7 @@ void Plane::read_battery(void)
 }
 
 // read fuel - reads the data from the arduino
-// TODO refine the arduino
+// Here's the new function to be called, don't forget to add this to the header 
 void Plane::read_fuel(void)
 {
     fuel.read_resistor();

@@ -980,7 +980,7 @@ private:
     void read_airspeed(void);
     void zero_airspeed(bool in_startup);
     void read_battery(void);
-    void read_fuel(void);
+    void read_fuel(void); // Add the new library function here
     void read_receiver_rssi(void);
     void rpm_update(void);
     void button_update(void);

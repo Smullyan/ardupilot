@@ -289,7 +289,7 @@ void Plane::send_extended_status1(mavlink_channel_t chan)
     int8_t battery_remaining = -1;
 
     if (battery.has_current() && battery.healthy()) {
-        battery_remaining = fuel.get_resistor();
+        battery_remaining = fuel.get_resistor();   // HERE'S WHERE I CHANGED THE BATTERY FIELD
         battery_current = battery.current_amps() * 100;
     }
 
